@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+/* 共通のスタイル */
+
+body {
+}
+header {
+  background-image: url(../img/header.jpg);
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 500px;
+  background-color: #ddd;
+  background-size: cover;
+  /* 縮小時の起点位置 */
+  background-position: "50% 50%";
+  background-attachment: fixed;
+}
+.stint-ultra-condensed-regular {
+  font-family: "Stint Ultra Condensed", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+header h1 {
+  font-size: 40px;
+  margin-left: 100px;
+}
+#global-nav {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  right: 20px;
+}
+#global-nav ul {
+  display: fixed;
+}
+#global-nav ul li {
+  margin-left: 20px;
+}
+
+#global-nav ul li a {
+  position: relative;
+  top: 0;
+  text-decoration: none;
+  text-shadow: 0, 0 10px#fff, 0 10px#fff, 0 10px#fff, 0 10px#fff;
+  font-size: 1.2rem;
+  color: #fff;
+}
+#global-nav ul li a:hover {
+  top: -3px;
+}
+#global-nav ul li a:active {
+  top: 0;
+}
+
+main {
+  padding-top: 50px;
+  width: 70%;
+  background-color: #bbb;
+  height: 1000px;
+}
+
+main article {
+}
+main article h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+main article figure {
+}
+main article img {
+  width: 100%;
+}
+main article h3 {
+}
+main article p {
+}
+
+.share {
+}
+.kanren {
+}
+aside {
+  padding-top: 50px;
+  width: 30%;
+  background-color: #999;
+}
+.aside-l {
+  background-color: #fee;
+}
+.aside-r {
+  background-color: #efe;
+}
+#wrap {
+  display: flex;
+  padding: 20px 0;
+  width: 1000px;
+  margin: 0 auto;
+}
+footer {
+  width: 1000px;
+  background-color: #777;
+}
+
+/* ########### 599px以下(スマホ) ########### */
+@media (max-width: 599px) {
+  header h1 {
+    font-size: 1rem;
+  }
+  #wrap {
+    display: block;
+    width: 100%;
+  }
+  main {
+    width: 100%;
+  }
+  aside {
+    width: 100%;
+  }
+  footer div {
+    width: 100%;
+  }
+}
+
+/* ########### 600px以上～768px以下(タブレット) ########### */
+@media (min-width: 600px) and (max-width: 768px) {
+  #wrap {
+    display: block;
+    width: 100%;
+  }
+  aside {
+    display: flex;
+    width: 100%;
+  }
+  aside-l {
+    width: 50%;
+  }
+  aside-r {
+    width: 50%;
+  }
+  footer div {
+    width: 100%;
+  }
+}
+
+/* ########### 769px以上(PC)########### */
+@media (min-width: 769px) {
+}
+
+/* ########### 1000px以上(PC) ########### */
+@media (min-width: 1000px) {
+  #wrap {
+    width: 100%;
+  }
+  footer div {
+    width: 1000px;
+  }
+}
