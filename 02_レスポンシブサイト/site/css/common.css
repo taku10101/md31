@@ -3,43 +3,43 @@
 /* 共通のスタイル */
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 header {
   display: flex;
   align-items: center;
   position: relative;
-  height: 500px;
+  height: 350px;
   background-color: #ddd;
   background-image: url(../images/header.jpg);
   background-size: cover;
-  background-position: 50% 50%;
+  /* 表示する画像を真ん中に設定したいとき */
+  background-position: 90% 50%;
+  /* 背景画像を固定する */
   background-attachment: fixed;
 }
 header h1 {
-  text-shadow: 0 0 10px #fff, 0 0 10px #fff;
   margin: 0 0 0 100px;
-  font-size: 5rem;
+  font-size: 6rem;
+  /* テキスト見やすくするための設定 */
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
 }
-.sedan-sc-regular {
-  font-family: "Sedan SC", serif;
-  font-weight: 400;
+
+/* フォント */
+.yuji-boku-bold {
+  font-family: "Yuji Boku", serif;
+  font-weight: 500;
   font-style: normal;
 }
 
 header nav#global-nav {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 50px;
+  right: 50px;
 }
+
 header nav#global-nav ul {
-  display: flex;
+  display: flex; /*横並び*/
 }
 header nav#global-nav ul li {
   margin: 0 0 0 30px;
@@ -48,33 +48,75 @@ header nav#global-nav ul li a {
   position: relative;
   top: 0;
   text-decoration: none;
-  text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
-  color: #000;
+  text-shadow: 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
   font-size: 1.2rem;
+  color: #fff;
+  /* transitionを設定したいプロパティの名前  */
   transition: top linear 0.1s;
 }
 header nav#global-nav ul li a:hover {
-  top: -5px;
-  text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff,
-    0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
+  top: -3px;
 }
 header nav#global-nav ul li a:active {
   top: 0;
 }
 
 div#wrap {
-  display: flex;
+  display: flex; /*横並び*/
   width: 1000px;
-  margin: 0 auto;
+  /* ↓真ん中 */
+  margin: 0 auto 0 auto;
 }
 
+/* main */
 main {
   width: 70%;
   padding: 50px 50px 0 0;
+  /* background-color: #888; */
 }
+
 main article {
-  margin: 0 0 50px 0;
 }
+
+main article div.dateinfo {
+  margin: -10px 0 20px 0;
+}
+
+main article div.dateinfo i {
+  margin: 0 5px 0 0;
+  font-size: 1.3rem;
+  color: #555;
+  /* ちょっと下に引き下げる */
+  position: relative;
+  top: 0.13rem;
+}
+
+main article div.tag-category {
+  margin: 0 0 20px 0;
+}
+
+main article div.tag-category ul {
+  display: flex;
+  list-style-type: none;
+}
+
+main article div.tag-category ul li {
+  margin: 0 10px 0 0;
+}
+
+main article div.tag-category ul li a {
+  display: block;
+  padding: 6px 8px 5px 8px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #f80;
+  border-radius: 3px;
+}
+
+main article div.tag-category ul li a:hover {
+  background-color: #8f0;
+}
+
 main article h2 {
   margin: 0 0 20px 0;
   font-size: 2rem;
@@ -85,22 +127,32 @@ main article figure {
 }
 main article figure img {
   width: 100%;
+  height: auto;
 }
 main article h3 {
   margin: 40px 0 20px 0;
   padding: 10px 10px 6px 10px;
   font-size: 1.4rem;
   font-weight: normal;
-  line-height: 1.2;
-  border-left: 10px solid #f80; /* 色変更 */
+  line-height: 1.2; /* 行間*/
+  /* 見出しの横の線 */
+  border-left: 10px solid #f80;
 }
 main article p {
   margin: 0 0 10px 0;
+  /* 行端をそろえる */
   text-align: justify;
   line-height: 1.6;
 }
-main div .share {
+main div.share {
 }
+main div.kanren {
+}
+
+main div.share {
+  margin: 0 0 50px 0;
+}
+
 main div.share ul {
   display: flex;
   list-style-type: none;
@@ -108,18 +160,21 @@ main div.share ul {
 main div.share ul li {
   width: 33.3333%;
 }
+
 main div.share ul li a {
   display: block;
   padding: 1rem 0;
   text-align: center;
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
 }
+
 main div.share ul li a:hover {
   opacity: 0.5;
 }
+
 .share-x {
-  background-color: #000000;
+  background-color: #000;
 }
 .share-fb {
   background-color: #1877f2;
@@ -127,113 +182,227 @@ main div.share ul li a:hover {
 .share-li {
   background-color: #00c300;
 }
+
 main div.share ul li a i {
   margin: 0 4px 0 0;
 }
 
-main article div.share {
-}
-main article div.kanren {
-  margin-bottom: 50px;
+main div.kanren {
+  margin: 0 0 50px 0;
   padding: 20px;
   background-color: #f0f0d4;
 }
-main article div.tag-category {
-  margin: 0 0 20px 0;
-}
-main article div.tag-category ul {
-  display: flex;
-  list-style-type: none;
-}
-main article div.tag-category ul li {
-  margin: 0 10px 0 0;
-}
-main article div.tag-category ul li a {
-  display: block;
-  padding: 6px 8px 5px 8px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #f80;
-  border-radius: 3px;
-}
-main article div.tag-category ul li a:hover {
-  background-color: #8f0;
-}
-main article h2 {
-  margin: 0 0 20px 0;
-  font-size: 2rem;
-  line-height: 2.4rem;
-}
-main article div.date-info {
-  margin: -10px 0 20px 0;
-}
-main article div.date-info i {
-  margin: 0 5px 0 0;
-  font-size: 1.3rem;
-  color: #555;
-  position: relative;
-  top: 0.13rem;
-}
-main article div.kanren h1 {
-  margin-bottom: 10px;
+
+/* 関連記事 */
+main div.kanren h1 {
+  margin: 0 0 10px 0;
   font-size: 1.4rem;
   font-weight: normal;
   color: #5a5b00;
 }
 
-.kanren ul {
+main div.kanren ul {
   display: flex;
-  list-style-type: none;
+  list-style: none;
 }
-.kanren ul li {
-  margin: 0 0 10px 0;
+
+main div.kanren ul li {
   width: 25%;
   padding: 8px;
 }
-.kanren ul li a {
+
+main div.kanren ul li a {
+  text-decoration: none;
+  color: #000;
 }
-main article div.kanren ul li a:hover {
+
+main div.kanren ul li a:hover {
+  text-decoration: underline wavy #0004;
+  text-underline-offset: 0.1rem;
 }
-.kanren ul li a img {
+
+main div.kanren ul li a img {
   max-width: 100%;
+  height: auto;
+  margin: 0 0 5px 0;
 }
-main article div.kanren ul li a.text {
+
+main div.kanren ul li a div.text {
+  line-height: 1.3rem;
 }
+
+main div.kanren {
+}
+
 aside {
   width: 30%;
   padding: 50px 0 0 0;
-  background-color: #888;
 }
+
 aside div.aside-l {
-  background-color: #fee;
 }
+
 aside div.aside-r {
-  background-color: #efe;
+}
+
+/* 特集記事 */
+aside div.aside-l section.tokusyuu {
+  margin: 0 0 50px 0;
+}
+
+aside div.aside-l section.tokusyuu h1 {
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: #666;
+  border-bottom: 2px dotted #ddd;
+}
+
+aside div.aside-l section.tokusyuu ul {
+  list-style-type: none;
+}
+
+aside div.aside-l section.tokusyuu ul li {
+}
+
+aside div.aside-l section.tokusyuu ul li a {
+  display: block;
+  padding: 10px 5px 10px 5px;
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+aside div.aside-l section.tokusyuu ul li a:hover {
+  background-color: #eee;
+}
+
+aside div.aside-l section.tokusyuu ul li a i {
+  margin: 0 5px 0 0;
+  color: #0006;
+}
+
+/* おすすめ記事 */
+aside div.aside-l section.osusume {
+  margin: 0 0 50px 0;
+}
+
+aside div.aside-l section.osusume h1 {
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: #666;
+  border-bottom: 2px dotted #ddd;
+}
+
+aside div.aside-l section.osusume ul {
+  list-style-type: none;
+}
+
+aside div.aside-l section.osusume ul li {
+  margin: 0 0 20px 0;
+}
+
+aside div.aside-l section.osusume ul li a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+
+aside div.aside-l section.osusume ul li a:hover {
+  opacity: 0.7;
+}
+
+aside div.aside-l section.osusume ul li a img {
+  /* ↓2つセットで記述 */
+  max-width: 100%;
+  height: auto;
+}
+
+aside div.aside-l section.osusume ul li a div.text {
+  background-color: #0008;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  /* 内側に収める設定 */
+  box-sizing: border-box;
+  color: #fff;
+  line-height: 1.2rem;
+}
+
+/* 人気記事 */
+aside div.aside-r section.ninki {
+  margin: 0 0 50px 0;
+}
+
+aside div.aside-r section.ninki h1 {
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: #666;
+  border-bottom: 2px dotted #ddd;
+}
+
+aside div.aside-r section.ninki ul {
+  list-style-type: none;
+}
+
+aside div.aside-r section.ninki ul li {
+  border-bottom: 1px dotted #ddd;
+}
+
+aside div.aside-r section.ninki ul li a {
+  display: flex;
+  padding: 5px;
+  text-decoration: none;
+  color: #f80;
+}
+
+aside div.aside-r section.ninki ul li a img {
+  width: 60px;
+  height: auto;
+  margin: 0 10px 0 0;
+}
+
+aside div.aside-r section.ninki ul li a:hover {
+  background-color: #eee;
+}
+
+aside div.aside-r section.ninki ul li a div.text span {
+  display: block;
+  margin: 5px 0 10px 0;
+  font-size: 0.85rem;
+  color: #666;
 }
 
 footer {
   padding: 20px 0;
-  background-color: #777;
-}
-footer div {
-  width: 1000px;
-  margin: 0 auto;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
 }
 
+footer div {
+  width: 1000px;
+  margin: 0 auto 0 auto;
+}
+
+/* mediaクエリ→PCサイトが完成した後に設定 */
 /* ########### 599px以下(smartphone) ########### */
 @media (max-width: 599px) {
   header h1 {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
   div#wrap {
     display: block;
+    width: 100%;
   }
-
   main {
     width: 100%;
   }
-
   aside {
     width: 100%;
   }
@@ -245,84 +414,106 @@ footer div {
 
 /* ########### 600px以上～768px以下(tablet) ########### */
 @media (min-width: 600px) and (max-width: 768px) {
+  header h1 {
+    margin: 0 0 0 30px;
+    font-size: 5rem;
+    /* テキスト見やすくするための設定 */
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
+  }
+
+  header nav#global-nav ul li a {
+    font-size: 1.2rem;
+  }
+
+  header nav#global-nav {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
   div#wrap {
     display: block;
     width: 100%;
+    padding: 0 20px 0 20px;
+    box-sizing: border-box;
   }
 
   main {
     width: 100%;
+    padding: 50px 0 0 0;
   }
 
   aside {
     display: flex;
     width: 100%;
   }
+
   aside div.aside-l {
     width: 50%;
   }
+
   aside div.aside-r {
     width: 50%;
   }
 
   footer div {
     width: 100%;
+    padding: 0 20px 0 20px;
+    box-sizing: border-box;
   }
 }
-
 /* ########### 769px以上(PC) ########### */
 @media (min-width: 769px) {
+  div#wrap {
+    width: 100%;
+    padding: 0 20px 0 20px;
+    box-sizing: border-box;
+  }
+
   header h1 {
     margin: 0 0 0 50px;
-    font-size: 4rem;
+    font-size: 5rem;
+    /* テキスト見やすくするための設定 */
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
   }
+
+  header nav#global-nav ul li a {
+    font-size: 1.2rem;
+  }
+
   header nav#global-nav {
     position: absolute;
     top: 25px;
     right: 25px;
   }
-  header nav#global-nav ul li a {
-    font-size: 1rem;
-  }
-
-  div#wrap {
-    padding: 0 20px 0 20px;
-    box-sizing: border-box;
-  }
 
   footer div {
+    width: 100%;
     padding: 0 20px 0 20px;
     box-sizing: border-box;
   }
 }
-
 /* ########### 1000px以上(PC) ########### */
 @media (min-width: 1000px) {
+  div#wrap {
+    width: 1000px;
+  }
+
   header h1 {
-    margin: 0 0 0 50px;
-    font-size: 5rem;
+    margin: 0 0 0 100px;
+    font-size: 6rem;
+    /* テキスト見やすくするための設定 */
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
   }
-  header nav#global-nav {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-  }
+
   header nav#global-nav ul li a {
     font-size: 1.2rem;
   }
 
-  div#wrap {
-    width: 1000px;
-  }
-
-  footer div {
-    width: 1000px;
-  }
-}
-/* ########### 1000px以上(pc) ########### */
-@media (min-width: 1000px) {
-  div#wrap {
-    width: 1000px;
+  header nav#global-nav {
+    position: absolute;
+    top: 25px;
+    right: 25px;
   }
 
   footer div {
