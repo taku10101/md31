@@ -212,8 +212,6 @@ main div.kanren ul li {
 }
 
 main div.kanren ul li a {
-  display: block;
-  text-align: center;
   text-decoration: none;
   color: #000;
 }
@@ -242,15 +240,9 @@ aside {
 }
 
 aside div.aside-l {
-  width: 50%;
-  padding: 0 5px 0 0;
-  box-sizing: border-box;
 }
 
 aside div.aside-r {
-  width: 50%;
-  padding: 0 0 0 5px;
-  box-sizing: border-box;
 }
 
 /* 特集記事 */
@@ -304,14 +296,11 @@ aside div.aside-l section.osusume h1 {
 }
 
 aside div.aside-l section.osusume ul {
-  max-width: 300px;
-  margin: 0 auto;
   list-style-type: none;
 }
 
 aside div.aside-l section.osusume ul li {
-  margin: 0 20px;
-  box-sizing: border-box;
+  margin: 0 0 20px 0;
 }
 
 aside div.aside-l section.osusume ul li a {
